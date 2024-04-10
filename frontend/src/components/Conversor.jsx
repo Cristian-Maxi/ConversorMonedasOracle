@@ -59,7 +59,7 @@ const Conversor = () => {
 
   const ConfirmarDescarga = () => {
     if(window.confirm("¿Decargar historial de las conversiones echas?")) {
-      window.location.href = 'http://localhost:8080/descargar' // Si el usuario confirma, realizar la descarga
+      window.location.href = 'https://conversormonedasoracle.onrender.com/descargar' // Si el usuario confirma, realizar la descarga
     } 
   }
 
