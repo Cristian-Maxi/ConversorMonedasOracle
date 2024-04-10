@@ -1,0 +1,11 @@
+.campo input {
+  background-color: rgba(255, 255, 255, 0.799);
+  border-radius: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.campo input::placeholder {
+  color: rgb(166, 0, 255);
+  font-weight: bolder;
+}

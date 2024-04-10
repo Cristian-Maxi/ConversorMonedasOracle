@@ -1,0 +1,4 @@
+Monto ingresado: 1000.0 ARS
+Cambio esperado: 1.159 USD
+Monto ingresado: 1000.0 ARS
+Cambio esperado: 1.159 USD
