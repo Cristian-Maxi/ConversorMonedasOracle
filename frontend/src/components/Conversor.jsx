@@ -32,7 +32,7 @@ const Conversor = () => {
   const Envio = (evento) => {
     evento.preventDefault();
 
-    if(typeof valor.valor1 == "string" && typeof valor.cantidad == "number" && typeof valor.valor2 == "string") {
+    if(typeof valor.valor1 == "string" && valor.cantidad != "" && typeof valor.valor2 == "string") {
 
       Axios.get(`http://localhost:8080/enviar?valor1=${valor.valor1}&cantidad=${valor.cantidad}&valor2=${valor.valor2}`)
             .then((response) => {
