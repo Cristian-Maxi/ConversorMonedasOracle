@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controlador {
 
-    //private final String nombreArchivo = "src\\main\\java\\SpringApp\\Historial.txt";
-    private final String nombreArchivo = "Historial.txt";
+    private final String nombreArchivo = "src\\main\\java\\SpringApp\\Historial.txt";
+    //private final String nombreArchivo = "Historial.txt";
 
     private ApiService apiService;
     private ManejoArchivos manejoArchivo = new ManejoArchivos();
