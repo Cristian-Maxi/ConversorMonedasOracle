@@ -34,7 +34,7 @@ const Conversor = () => {
 
     if(typeof valor.valor1 == "string" && valor.cantidad != "" && typeof valor.valor2 == "string") {
 
-      Axios.get(`http://localhost:8080/enviar?valor1=${valor.valor1}&cantidad=${valor.cantidad}&valor2=${valor.valor2}`)
+      Axios.get(`https://conversormonedasoracle.onrender.com/enviar?valor1=${valor.valor1}&cantidad=${valor.cantidad}&valor2=${valor.valor2}`)
             .then((response) => {
               const resultado = response.data
               setResultado(resultado)
