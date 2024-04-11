@@ -58,11 +58,28 @@ const Conversor = () => {
   };
 
   const ConfirmarDescarga = () => {
-    if(window.confirm("¿Decargar historial de las conversiones echas?")) {
-      window.location.href = 'https://conversormonedasoracle.onrender.com/descargar' // Si el usuario confirma, realizar la descarga
-    } 
-  }
-
+    if (window.confirm("¿Descargar historial de las conversiones realizadas?")) {
+      // Realizar la solicitud GET al endpoint de descarga en el servidor
+      Axios.get("http://localhost:8080/descargar", {
+        responseType: 'blob', // Indicar que la respuesta es un blob (archivo)
+      })
+        .then(response => {
+          // Crear un enlace temporal para descargar el archivo
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'Historial.txt'); // Nombre del archivo
+          document.body.appendChild(link);
+          link.click();
+          // Limpiar después de la descarga
+          link.parentNode.removeChild(link);
+        })
+        .catch(error => {
+          console.log("Error al descargar el historial:", error);
+          // Manejar errores de descarga
+        });
+    }
+  };
 
   return (
     <div className='h-[80%] flex justify-center items-center'>
