@@ -59,7 +59,7 @@ const Conversor = () => {
 
   const ConfirmarDescarga = () => {
     if(window.confirm("¿Decargar historial de las conversiones echas?")) {
-      Axios.get("https://conversormonedasoracle.onrender.com/descargar") // Si el usuario confirma, realizar la descarga
+      window.location.href = 'https://conversormonedasoracle.onrender.com/descargar' // Si el usuario confirma, realizar la descarga
     } 
   }
 
