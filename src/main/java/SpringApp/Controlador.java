@@ -27,7 +27,6 @@ public class Controlador {
     
     @GetMapping("/descargar")
     public ResponseEntity<Resource> DescargarArchivo() {
-        manejoArchivo.crearArchivo(nombreArchivo); 
         manejoArchivo.leerArchivo(nombreArchivo);
         Resource archivo = new FileSystemResource(nombreArchivo);
         return ResponseEntity.ok()
