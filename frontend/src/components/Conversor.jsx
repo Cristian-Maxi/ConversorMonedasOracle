@@ -60,7 +60,7 @@ const Conversor = () => {
   const ConfirmarDescarga = () => {
     if (window.confirm("¿Descargar historial de las conversiones realizadas?")) {
       // Realizar la solicitud GET al endpoint de descarga en el servidor
-      Axios.get("http://localhost:8080/descargar", {
+      Axios.get("https://conversormonedasoracle.onrender.com/descargar", {
         responseType: 'blob', // Indicar que la respuesta es un blob (archivo)
       })
         .then(response => {
