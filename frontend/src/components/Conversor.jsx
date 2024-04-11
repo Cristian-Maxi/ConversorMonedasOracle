@@ -75,6 +75,7 @@ const Conversor = () => {
           link.parentNode.removeChild(link);
         })
         .catch(error => {
+          aler("Por favor ingrese valores antes de descargar")
           console.log("Error al descargar el historial:", error);
           // Manejar errores de descarga
         });
