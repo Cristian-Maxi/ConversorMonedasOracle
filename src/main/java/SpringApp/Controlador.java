@@ -42,7 +42,7 @@ public class Controlador {
             DecimalFormat formato = new DecimalFormat("#.00");
             String respuesta = "Monto ingresado: " + cantidad + " " + valor1 + "\n"
                     + "Cambio esperado: " + formato.format(moneda) + " " + valor2;
-            manejoArchivo.crearArchivo(nombreArchivo);
+            //manejoArchivo.crearArchivo(nombreArchivo);
             manejoArchivo.anexarArchivo(nombreArchivo, respuesta);
             return respuesta;
         } catch (IOException | InterruptedException ex) {
