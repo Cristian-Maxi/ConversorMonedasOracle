@@ -1,13 +1,10 @@
 package SpringApp;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,13 +28,6 @@ public class Controlador {
     @GetMapping("/descargar")
     public ResponseEntity<Resource> DescargarArchivo() {
         manejoArchivo.leerArchivo(nombreArchivo);
-        File comprobar = new File(nombreArchivo);
-        if (!comprobar.exists()) {
-            // Si el archivo no existe, devuelve un mensaje
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(new ByteArrayResource("No hay historial disponible para descargar".getBytes()));
-        }
-        // Si el archivo existe, continuar con la descarga normalmente
         Resource archivo = new FileSystemResource(nombreArchivo);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + archivo.getFilename())
